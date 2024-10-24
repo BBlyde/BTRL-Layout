@@ -3,7 +3,6 @@
     <?php include 'style.css'; ?>
 </style>
 
-
 <?php
 // Retrieve api endpoint datas
 // $url = "https://paceman.gg/api/get-event-completions?eventId=6713bb5daaa1ede5c2d980d3&usePoints=false"; // Msf Id
@@ -33,6 +32,7 @@ foreach ($jsonLeaderboard as $playerData) {
 <!-- Main content -->
 <body>
     <div class="content-main">
+        <!-- Podium display -->
         <div class="podium">
             <?php
             for ($i = 0; $i < 3; $i++) {
@@ -63,8 +63,10 @@ foreach ($jsonLeaderboard as $playerData) {
             ?>
         </div>
 
+        <!-- Array Display -->
         <div class="container">
             <?php
+            // First Array
             if (isset($leaderboard[$i])) {
                 echo '<div id="tab-1" class="content valid active tab">';
             } else {
@@ -78,9 +80,8 @@ foreach ($jsonLeaderboard as $playerData) {
                 }
             }
             echo '</div>';
-            ?>
 
-            <?php
+            // Second Array
             if (isset($leaderboard[$i-1])) {
                 echo '<div id="tab-2" class="content valid tab">';
             } else {
@@ -94,9 +95,8 @@ foreach ($jsonLeaderboard as $playerData) {
                 }
             }
             echo '</div>';
-            ?>
 
-            <?php
+            // Third Array
             if (isset($leaderboard[$i-1])) {
                 echo '<div id="tab-3" class="content valid tab">';
             } else {
@@ -120,7 +120,6 @@ foreach ($jsonLeaderboard as $playerData) {
             function showNextDiv() {
                 divs[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % divs.length;
-                console.log(divs.length);
                 divs[currentIndex].classList.add('active');
             }
             setInterval(showNextDiv, 2000);
