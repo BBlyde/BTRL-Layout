@@ -21,7 +21,6 @@ body {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    padding-right: 40px;
 }
 
 .box {
@@ -29,15 +28,14 @@ body {
     flex-direction: row;
     align-items: center;
     padding-top: 20px;
-}
-
-.skull {
-    padding-right: 20px;
+    
 }
 
 .player-data {
     display: flex;
     flex-direction: column;
+    width: 250px;
+    margin-left: -40px;
 }
 
 #skull-first {
