@@ -54,7 +54,7 @@ foreach ($jsonLeaderboard as $playerData) {
                             <?php echo isset($leaderboard[$i]) ? $leaderboard[$i][0] : "xxxx" ?>
                         </div>
                         <div>
-                            <?php echo isset($leaderboard[$i]) ? $leaderboard[$i][1] . ":" . $leaderboard[$i][2] : "xx:xx" ?>
+                            <?php echo isset($leaderboard[$i]) ? $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] : "xx:xx" ?>
                         </div>
                     </div>
                 </div>
