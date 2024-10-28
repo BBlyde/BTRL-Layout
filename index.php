@@ -34,7 +34,6 @@ foreach ($jsonLeaderboard as $playerData) {
     <div class="content-main">
         <!-- Podium display -->
 	<div class="podium">
-	Test
             <?php
             for ($i = 0; $i < 3; $i++) {
             ?>
