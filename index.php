@@ -74,7 +74,7 @@ foreach ($jsonLeaderboard as $playerData) {
             };
             for ($i = 4; $i < 9; $i++) {
                 if (isset($leaderboard[$i-1])) {
-                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . $leaderboard[$i - 1][2] . '</span>';
+                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
                     echo '<span id="lb-' . $i . '"></span>';
                 }
@@ -89,7 +89,7 @@ foreach ($jsonLeaderboard as $playerData) {
             };
             for ($i = 9; $i < 14; $i++) {
                 if (isset($leaderboard[$i-1])) {
-                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . $leaderboard[$i - 1][2] . '</span>';
+                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
                     echo '<span id="lb-' . $i . '"></span>';
                 }
@@ -104,7 +104,7 @@ foreach ($jsonLeaderboard as $playerData) {
             };
             for ($i = 14; $i < 19; $i++) {
                 if (isset($leaderboard[$i-1])) {
-                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . $leaderboard[$i - 1][2] . '</span>';
+                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
                     echo '<span id="lb-' . $i . '"></span>';
                 }
