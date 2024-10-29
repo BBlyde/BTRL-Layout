@@ -66,15 +66,15 @@ foreach ($jsonLeaderboard as $playerData) {
         <!-- Array Display -->
         <div class="container">
             <?php
-            // First Array
+	    // First Array
             if (isset($leaderboard[$i])) {
                 echo '<div id="tab-1" class="content valid active tab">';
             } else {
                 echo '<div id="tab-1" class="content active tab">';
             };
-            for ($i = 4; $i < 9; $i++) {
-                if (isset($leaderboard[$i-1])) {
-                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
+            for ($i = 3; $i < 8; $i++) {
+                if (isset($leaderboard[$i])) {
+                    echo '<span id="lb-' . $i . '">' . $i+1 . '. ' . $leaderboard[$i][0] . ' : ' . $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
                     echo '<span id="lb-' . $i . '"></span>';
                 }
@@ -82,14 +82,14 @@ foreach ($jsonLeaderboard as $playerData) {
             echo '</div>';
 
             // Second Array
-            if (isset($leaderboard[$i-1])) {
+            if (isset($leaderboard[$i])) {
                 echo '<div id="tab-2" class="content valid tab">';
             } else {
                 echo '<div id="tab-2" class="content tab">';
             };
-            for ($i = 9; $i < 14; $i++) {
-                if (isset($leaderboard[$i-1])) {
-                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
+            for ($i = 8; $i < 13; $i++) {
+                if (isset($leaderboard[$i])) {
+                    echo '<span id="lb-' . $i . '">' . $i+1 . '. ' . $leaderboard[$i][0] . ' : ' . $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
                     echo '<span id="lb-' . $i . '"></span>';
                 }
@@ -97,14 +97,14 @@ foreach ($jsonLeaderboard as $playerData) {
             echo '</div>';
 
             // Third Array
-            if (isset($leaderboard[$i-1])) {
+            if (isset($leaderboard[$i])) {
                 echo '<div id="tab-3" class="content valid tab">';
             } else {
                 echo '<div id="tab-3" class="content tab">';
             };
-            for ($i = 14; $i < 19; $i++) {
-                if (isset($leaderboard[$i-1])) {
-                    echo '<span id="lb-' . $i . '">' . $i . '. ' . $leaderboard[$i - 1][0] . ' : ' . $leaderboard[$i - 1][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
+            for ($i = 13; $i < 18; $i++) {
+                if (isset($leaderboard[$i])) {
+                    echo '<span id="lb-' . $i . '">' . $i+1 . '. ' . $leaderboard[$i][0] . ' : ' . $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
                     echo '<span id="lb-' . $i . '"></span>';
                 }
@@ -122,7 +122,7 @@ foreach ($jsonLeaderboard as $playerData) {
                 currentIndex = (currentIndex + 1) % divs.length;
                 divs[currentIndex].classList.add('active');
             }
-            setInterval(showNextDiv, 2000);
+            setInterval(showNextDiv, 8000);
         </script>
     </div>
 </body>
