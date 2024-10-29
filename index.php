@@ -25,7 +25,7 @@ foreach ($jsonLeaderboard as $playerData) {
     $pb_minutes = floor($pb / (60 * 1000));
     $pb_seconds = floor(($pb % (60 * 1000)) / 1000);
 
-    array_push($leaderboard, [$playerData["nickname"], $pb_minutes, $pb_seconds]);
+    array_push($leaderboard, [substr($playerData["nickname"],0 , 12), $pb_minutes, $pb_seconds]);
 }
 ?>
 
@@ -122,7 +122,7 @@ foreach ($jsonLeaderboard as $playerData) {
                 currentIndex = (currentIndex + 1) % divs.length;
                 divs[currentIndex].classList.add('active');
             }
-            setInterval(showNextDiv, 8000);
+	    setInterval(showNextDiv, 2000);
         </script>
     </div>
 </body>
