@@ -5,8 +5,8 @@
 
 <?php
 // Retrieve api endpoint datas
-// $url = "https://paceman.gg/api/get-event-completions?eventId=6713bb5daaa1ede5c2d980d3&usePoints=false"; // Msf Id
-$url = "https://paceman.gg/api/get-event-completions?eventId=66d9e28f3aa05cdeb5c8bbec&usePoints=false"; // Exemple Id
+$url = "https://paceman.gg/api/get-event-completions?eventId=6713bb5daaa1ede5c2d980d3&usePoints=false"; // Msf Id
+// $url = "https://paceman.gg/api/get-event-completions?eventId=66d9e28f3aa05cdeb5c8bbec&usePoints=false"; // Exemple Id
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -68,9 +68,9 @@ foreach ($jsonLeaderboard as $playerData) {
             <?php
 	    // First Array
             if (isset($leaderboard[$i])) {
-                echo '<div id="tab-1" class="content valid active tab">';
+                echo '<div class="content valid active tab">';
             } else {
-                echo '<div id="tab-1" class="content active tab">';
+                echo '<div class="content active tab">';
             };
             for ($i = 3; $i < 8; $i++) {
                 if (isset($leaderboard[$i])) {
@@ -83,9 +83,9 @@ foreach ($jsonLeaderboard as $playerData) {
 
             // Second Array
             if (isset($leaderboard[$i])) {
-                echo '<div id="tab-2" class="content valid tab">';
+                echo '<div class="content valid tab">';
             } else {
-                echo '<div id="tab-2" class="content tab">';
+                echo '<div class="content tab">';
             };
             for ($i = 8; $i < 13; $i++) {
                 if (isset($leaderboard[$i])) {
@@ -98,11 +98,41 @@ foreach ($jsonLeaderboard as $playerData) {
 
             // Third Array
             if (isset($leaderboard[$i])) {
-                echo '<div id="tab-3" class="content valid tab">';
+                echo '<div class="content valid tab">';
             } else {
-                echo '<div id="tab-3" class="content tab">';
+                echo '<div class="content tab">';
             };
             for ($i = 13; $i < 18; $i++) {
+                if (isset($leaderboard[$i])) {
+                    echo '<span id="lb-' . $i . '">' . $i+1 . '. ' . $leaderboard[$i][0] . ' : ' . $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
+                } else {
+                    echo '<span id="lb-' . $i . '"></span>';
+                }
+            }
+            echo '</div>';
+
+            // Fourth Array
+            if (isset($leaderboard[$i])) {
+                echo '<div class="content valid tab">';
+            } else {
+                echo '<div class="content tab">';
+            };
+            for ($i = 18; $i < 23; $i++) {
+                if (isset($leaderboard[$i])) {
+                    echo '<span id="lb-' . $i . '">' . $i+1 . '. ' . $leaderboard[$i][0] . ' : ' . $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
+                } else {
+                    echo '<span id="lb-' . $i . '"></span>';
+                }
+            }
+            echo '</div>';
+
+            // Fifth Array
+            if (isset($leaderboard[$i])) {
+                echo '<div class="content valid tab">';
+            } else {
+                echo '<div class="content tab">';
+            };
+            for ($i = 23; $i < 28; $i++) {
                 if (isset($leaderboard[$i])) {
                     echo '<span id="lb-' . $i . '">' . $i+1 . '. ' . $leaderboard[$i][0] . ' : ' . $leaderboard[$i][1] . ":" . ($leaderboard[$i][2] < 10 ? '0' : '') . $leaderboard[$i][2] . '</span>';
                 } else {
@@ -122,7 +152,7 @@ foreach ($jsonLeaderboard as $playerData) {
                 currentIndex = (currentIndex + 1) % divs.length;
                 divs[currentIndex].classList.add('active');
             }
-	    setInterval(showNextDiv, 2000);
+	    setInterval(showNextDiv, 7500);
         </script>
     </div>
 </body>
