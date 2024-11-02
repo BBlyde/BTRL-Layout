@@ -25,7 +25,7 @@ foreach ($jsonLeaderboard as $playerData) {
     $pb_minutes = floor($pb / (60 * 1000));
     $pb_seconds = floor(($pb % (60 * 1000)) / 1000);
 
-    array_push($leaderboard, [substr($playerData["nickname"],0 , 12), $pb_minutes, $pb_seconds]);
+    array_push($leaderboard, [substr($playerData["nickname"],0 , 12), $pb_minutes, $pb_seconds, $playerData["nickname"]]);
 }
 ?>
 
@@ -41,11 +41,11 @@ foreach ($jsonLeaderboard as $playerData) {
                     <div class="skull">
                         <?php
                         if ($i == 0) {
-                            echo isset($leaderboard[$i]) ? '<img id="skull-first" src="https://mc-heads.net/avatar/' . $leaderboard[$i][0] . '">' : '<img id="skull-first" src="https://mc-heads.net/avatar/MHF_Question">';
+                            echo isset($leaderboard[$i]) ? '<img id="skull-first" src="https://mc-heads.net/avatar/' . $leaderboard[$i][3] . '">' : '<img id="skull-first" src="https://mc-heads.net/avatar/MHF_Question">';
                         } else if ($i == 1) {
-                            echo isset($leaderboard[$i]) ? '<img id="skull-second" src="https://mc-heads.net/avatar/' . $leaderboard[$i][0] . '">' : '<img id="skull-second" src="https://mc-heads.net/avatar/MHF_Question">';
+                            echo isset($leaderboard[$i]) ? '<img id="skull-second" src="https://mc-heads.net/avatar/' . $leaderboard[$i][3] . '">' : '<img id="skull-second" src="https://mc-heads.net/avatar/MHF_Question">';
                         } else {
-                            echo isset($leaderboard[$i]) ? '<img id="skull-third" src="https://mc-heads.net/avatar/' . $leaderboard[$i][0] . '">' : '<img id="skull-third" src="https://mc-heads.net/avatar/MHF_Question">';
+                            echo isset($leaderboard[$i]) ? '<img id="skull-third" src="https://mc-heads.net/avatar/' . $leaderboard[$i][3] . '">' : '<img id="skull-third" src="https://mc-heads.net/avatar/MHF_Question">';
                         }
                         ?>
                     </div>
